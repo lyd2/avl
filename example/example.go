@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/lyd/avl"
+	"github.com/lyd2/avl"
 	"strconv"
 )
 

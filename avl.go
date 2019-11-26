@@ -1,6 +1,7 @@
 package avl
 
 import (
+	"errors"
 	"fmt"
 	"math"
 )
@@ -131,11 +132,11 @@ func (avl *avl) Insert(key string, value interface{}) {
 	}
 }
 
-func (avl *avl) Search(key string) (value interface{}, err interface{}) {
+func (avl *avl) Search(key string) (value interface{}, err error) {
 
 	if avl.root == nil {
 		value = nil
-		err = "key does not exist"
+		err = errors.New("key does not exist")
 		return
 	}
 
@@ -157,7 +158,7 @@ func (avl *avl) Search(key string) (value interface{}, err interface{}) {
 
 	if node.key != key {
 		value = nil
-		err = "key does not exist"
+		err = errors.New("key does not exist")
 		return
 	}
 

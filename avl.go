@@ -272,11 +272,11 @@ func (avl *avl) Depth() int {
 /**
 中序遍历
 */
-type iterator struct {
+type traversal struct {
 	List []*avlNode
 }
 
-func (it *iterator) inOrder(node *avlNode) {
+func (it *traversal) inOrder(node *avlNode) {
 	if node == nil {
 		return
 	}
@@ -285,8 +285,8 @@ func (it *iterator) inOrder(node *avlNode) {
 	it.inOrder(node.right)
 }
 
-func (avl *avl) InOrder() *iterator {
-	it := &iterator{List: []*avlNode{}}
+func (avl *avl) InOrder() *traversal {
+	it := &traversal{List: []*avlNode{}}
 
 	if avl.root != nil {
 		it.inOrder(avl.root)

@@ -19,11 +19,11 @@ func TestAvl(t *testing.T) {
 		val, err := avlTree.Search(strconv.FormatInt(int64(i), 10))
 
 		if err != nil {
-			t.Error("key=" + strconv.FormatInt(int64(i), 10) + ", " + err.(string))
+			t.Errorf("key=%d, %v", i, err)
 		}
 
 		if val.(int) != i {
-			t.Error("key=" + strconv.FormatInt(int64(i), 10))
+			t.Errorf("key=%d", i)
 		}
 	}
 }
